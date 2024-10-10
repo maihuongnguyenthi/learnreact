@@ -17,6 +17,9 @@ const Layout = () => {
           <li>
             <Link to="/todo-list">Todo List</Link>
           </li>
+          <li>
+            <Link to="/learn-useEffect">learn-useEffect</Link>
+          </li>
         </ul>
 
         <button onClick={()=>setShow(!show)}>Toggle</button>
