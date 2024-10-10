@@ -6,6 +6,7 @@ import Layout from "./pages/Layout";
 import App from './pages/App';
 import TwoWayBinding from './pages/twoWayBinding';
 import TodoList from './pages/TodoList';
+import LearnUseEffect from './pages/LearnUseEffect';
 import NoPage from './pages/NoPage';
 import reportWebVitals from './reportWebVitals';
 
@@ -18,6 +19,7 @@ root.render(
           <Route index element={<App />} />
           <Route path="two-way-bindings" element={<TwoWayBinding />} />
           <Route path="todo-list" element={<TodoList />} />
+          <Route path="learn-useEffect" element={<LearnUseEffect />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
