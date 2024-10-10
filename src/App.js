@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+
+const order=[100,200,300]
 
 function App() {
+  const [counter,setCouter]= useState(()=>{
+    const totalOrder=order.reduce((total,cur)=> total + cur)
+    return totalOrder;
+  })
+
+  const handleCounter = ()=>{
+    setCouter(prevState=>prevState+1);
+    setCouter(prevState=>prevState+1);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{padding:20}} className="App">
+      <h1>{counter}</h1>
+      <button onClick={handleCounter}>Click</button>
     </div>
   );
 }
