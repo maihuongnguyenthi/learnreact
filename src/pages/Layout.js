@@ -1,6 +1,9 @@
 import { Outlet, Link } from "react-router-dom";
+import { useState } from "react";
+import Mounted from "./Mounted";
 
 const Layout = () => {
+    const [show,setShow]=useState(false)
   return (
     <>
       <nav>
@@ -15,6 +18,9 @@ const Layout = () => {
             <Link to="/todo-list">Todo List</Link>
           </li>
         </ul>
+
+        <button onClick={()=>setShow(!show)}>Toggle</button>
+        {show && <Mounted/>}
       </nav>
 
       <Outlet />

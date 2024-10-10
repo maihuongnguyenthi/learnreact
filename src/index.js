@@ -4,7 +4,7 @@ import './index.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
 import App from './pages/App';
-import TwoWayBinding from './pages/TwoWayBinding';
+import TwoWayBinding from './pages/twoWayBinding';
 import TodoList from './pages/TodoList';
 import NoPage from './pages/NoPage';
 import reportWebVitals from './reportWebVitals';
