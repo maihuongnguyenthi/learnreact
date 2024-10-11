@@ -8,8 +8,23 @@ import TwoWayBinding from './pages/twoWayBinding';
 import TodoList from './pages/TodoList';
 import LearnUseEffect from './pages/LearnUseEffect';
 import LearnUseEffectClosure from './pages/LearnUseEffectClosure';
+import LearnUseEffectChatApp from './pages/LearnUseEffectChatApp';
 import NoPage from './pages/NoPage';
 import reportWebVitals from './reportWebVitals';
+
+//fake comments
+function emitComment(id) {
+  setInterval(() => {
+    window.dispatchEvent(
+      new CustomEvent(`lesson-${id}`, {
+        detail: `Noi dung comment cua lesson ${id}`
+      })
+    )
+  }, 2000)
+}
+emitComment(1)
+emitComment(2)
+emitComment(3)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,6 +37,7 @@ root.render(
           <Route path="todo-list" element={<TodoList />} />
           <Route path="learn-useEffect" element={<LearnUseEffect />} />
           <Route path="learn-useEffect-closure" element={<LearnUseEffectClosure />} />
+          <Route path="learn-useEffect-chat-app" element={<LearnUseEffectChatApp />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

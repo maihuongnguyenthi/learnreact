@@ -23,6 +23,9 @@ const Layout = () => {
           <li>
             <Link to="/learn-useEffect-closure">learn-useEffect-closure</Link>
           </li>
+          <li>
+            <Link to="/learn-useEffect-chat-app">learn-useEffect-closure-chat-app</Link>
+          </li>
         </ul>
 
         <button onClick={()=>setShow(!show)}>Toggle</button>
