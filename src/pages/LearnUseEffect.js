@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 //1. gọi lại khi re-render (VD: gọi hàm setState())
 //2. gọi lại 1 lần đầu thoi sau khi mounted vào dom
 //3. gọi lại khi giá trị phụ thuộc thay đổi
+//Cleanup function nó luốn đc gọi trước khi component unmount
 
 const tabs = ['posts', 'comments', 'albums']
 
@@ -12,6 +13,8 @@ const LearnUseEffect = () => {
     const [title, setTitle] = useState('')
     const [posts, setPosts] = useState([])
     const [item, setItem] = useState('posts')
+    const [showGoToTop, setShowGoToTop] = useState(false)
+    const [width, setWidth] = useState(window.innerWidth)
 
     useEffect(() => {
         document.title = title
@@ -24,6 +27,35 @@ const LearnUseEffect = () => {
                 setPosts(posts);
             })
     }, [item])
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY >= 200) {
+                setShowGoToTop(true)
+            } else {
+                setShowGoToTop(false)
+            }
+            //setShowGoToTop(window.scrollY >= 200)
+        }
+
+        window.addEventListener('scroll', handleScroll)
+        //cleanup function
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWidth(window.innerWidth)
+        }
+        window.addEventListener('resize', handleResize)
+
+        //cleanup function
+        return ()=>{
+            window.removeEventListener('resize', handleResize)
+        }
+    }, [])
 
     return (
         <>
@@ -50,6 +82,19 @@ const LearnUseEffect = () => {
                     <li key={post.id}>{post.title || post.name}</li>
                 ))}
             </ul>
+            {showGoToTop &&
+
+                <button
+                    style={{
+                        position: 'fixed',
+                        right: 20,
+                        bottom: 20,
+                    }}
+                >
+                    Go to top
+                </button>
+            }
+            <h1>{width}</h1>
         </>
     )
 };
