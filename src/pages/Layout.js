@@ -20,6 +20,9 @@ const Layout = () => {
           <li>
             <Link to="/learn-useEffect">learn-useEffect</Link>
           </li>
+          <li>
+            <Link to="/learn-useEffect-closure">learn-useEffect-closure</Link>
+          </li>
         </ul>
 
         <button onClick={()=>setShow(!show)}>Toggle</button>
