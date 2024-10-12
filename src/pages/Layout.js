@@ -29,6 +29,9 @@ const Layout = () => {
           <li>
             <Link to="/learn-useRef">learn-useRef</Link>
           </li>
+          <li>
+            <Link to="/learn-memo">learn-memo</Link>
+          </li>
         </ul>
 
         <button onClick={()=>setShow(!show)}>Toggle</button>

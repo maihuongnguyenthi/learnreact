@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-
-
 function TodoList() {
     
     const [job, setJob] = useState('')
