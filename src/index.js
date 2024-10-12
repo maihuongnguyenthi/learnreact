@@ -12,6 +12,7 @@ import LearnUseEffectChatApp from './pages/LearnUseEffectChatApp';
 import LearnUseRef from './pages/LearnUseRef';
 import LearnMemo from './pages/LearnMemo';
 import LearnUseMemo from './pages/LearnUseMemo';
+import LearnUseReducer from './pages/LearnUseReducer';
 import NoPage from './pages/NoPage';
 import reportWebVitals from './reportWebVitals';
 
@@ -44,6 +45,7 @@ root.render(
           <Route path="learn-useRef" element={<LearnUseRef />} />
           <Route path="learn-memo" element={<LearnMemo />} />
           <Route path="learn-use-memo" element={<LearnUseMemo />} />
+          <Route path="learn-use-reducer" element={<LearnUseReducer />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

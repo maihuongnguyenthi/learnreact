@@ -1,9 +1,10 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 
 const LearnUseMemo = () => {
     const [name, setName] = useState('')
     const [price, setPrice] = useState('')
     const [products, setProducts] = useState([])
+    const nameRef = useRef()
 
     const handleSubmit = () => {
         setProducts([...products,
@@ -11,13 +12,16 @@ const LearnUseMemo = () => {
             name,
             price: +price //Number
         }])
+        setName('')
+        setPrice('')
+        nameRef.current.focus()
     }
 
     const total = useMemo(() => {
         const result = products.reduce((result, product) => {
             console.log('Tinh toan lai')
             return result + product.price
-        },0)
+        }, 0)
 
         return result
     }, [products])
@@ -25,6 +29,7 @@ const LearnUseMemo = () => {
     return <div>
         <h1>LearnUseMemo</h1>
         <input
+            ref={nameRef}
             value={name}
             placeholder="Enter Name ..."
             onChange={e => setName(e.target.value)}
@@ -39,7 +44,7 @@ const LearnUseMemo = () => {
         <ul>
             {products.map((product, index) => (
                 <li key={index}>
-                    Name: {product.name} <br/>
+                    Name: {product.name} <br />
                     Price: {product.price}
                 </li>
             ))}
