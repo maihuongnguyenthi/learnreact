@@ -9,6 +9,7 @@ import TodoList from './pages/TodoList';
 import LearnUseEffect from './pages/LearnUseEffect';
 import LearnUseEffectClosure from './pages/LearnUseEffectClosure';
 import LearnUseEffectChatApp from './pages/LearnUseEffectChatApp';
+import LearnUseRef from './pages/LearnUseRef';
 import NoPage from './pages/NoPage';
 import reportWebVitals from './reportWebVitals';
 
@@ -38,6 +39,7 @@ root.render(
           <Route path="learn-useEffect" element={<LearnUseEffect />} />
           <Route path="learn-useEffect-closure" element={<LearnUseEffectClosure />} />
           <Route path="learn-useEffect-chat-app" element={<LearnUseEffectChatApp />} />
+          <Route path="learn-useRef" element={<LearnUseRef />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
