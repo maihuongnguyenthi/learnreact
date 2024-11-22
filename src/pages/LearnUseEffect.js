@@ -35,7 +35,7 @@ const LearnUseEffect = () => {
             } else {
                 setShowGoToTop(false)
             }
-            //setShowGoToTop(window.scrollY >= 200)
+            // setShowGoToTop(window.scrollY >= 200)
         }
 
         window.addEventListener('scroll', handleScroll)

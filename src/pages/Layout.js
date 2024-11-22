@@ -38,6 +38,9 @@ const Layout = () => {
           <li>
             <Link to="/learn-use-reducer">learn-use-reducer</Link>
           </li>
+          <li>
+            <Link to="/useImperative">useImperativeHandle</Link>
+          </li>
         </ul>
 
         <button onClick={()=>setShow(!show)}>Toggle</button>

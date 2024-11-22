@@ -13,6 +13,7 @@ import LearnUseRef from './pages/LearnUseRef';
 import LearnMemo from './pages/LearnMemo';
 import LearnUseMemo from './pages/LearnUseMemo';
 import LearnUseReducer from './pages/LearnUseReducer';
+import LearnuseImperativeHandle from './pages/LearnUseImperativeHandle';
 import NoPage from './pages/NoPage';
 import reportWebVitals from './reportWebVitals';
 
@@ -46,6 +47,7 @@ root.render(
           <Route path="learn-memo" element={<LearnMemo />} />
           <Route path="learn-use-memo" element={<LearnUseMemo />} />
           <Route path="learn-use-reducer" element={<LearnUseReducer />} />
+          <Route path="useImperative" element={<LearnuseImperativeHandle/>} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
